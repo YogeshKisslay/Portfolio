@@ -381,29 +381,30 @@ const Hero = () => {
 
         {/* LEFT — text content */}
         <div className="flex-1 text-center lg:text-left">
-          {/* CGPA highlight (prominent, first thing recruiters see) */}
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.05 }}
-            aria-label="CGPA: 9.02 out of 10"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-mono text-emerald-300 mb-7 border border-emerald-400/20 shadow-xl"
-          >
-            <span className="text-xs tracking-widest">CGPA</span>
-            <span className="text-sm font-bold text-white">9.02</span>
-            <span className="text-xs">/10</span>
-          </motion.div>
+          {/* Badges: stacked container so CGPA and availability are separated */}
+          <div className="flex flex-col items-center lg:items-start gap-3 mb-7">
+            <motion.div
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.05 }}
+              aria-label="CGPA: 9.02 out of 10"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-mono text-emerald-300 border border-emerald-400/20 shadow-xl"
+            >
+              <span className="text-xs tracking-widest">CGPA</span>
+              <span className="text-sm font-bold text-white">9.02</span>
+              <span className="text-xs">/10</span>
+            </motion.div>
 
-          {/* Status badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-mono text-cyan-400 mb-7 border border-cyan-400/20"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Available for full-time roles · Jun 2026
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-mono text-cyan-400 border border-cyan-400/20"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Available for full-time roles · Jun 2026
+            </motion.div>
+          </div>
 
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
