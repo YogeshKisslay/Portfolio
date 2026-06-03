@@ -219,9 +219,11 @@ const Navbar = () => {
   }, [])
 
   const scrollTo = (id) => {
+  setMobileOpen(false)
+  setTimeout(() => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
-    setMobileOpen(false)
-  }
+  }, 320) // matches the AnimatePresence exit duration
+}
 
   return (
     <motion.nav
